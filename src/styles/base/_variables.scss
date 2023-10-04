@@ -1,0 +1,97 @@
+@use 'sass:color';
+@import '@/styles/colors';
+
+:root,
+::before,
+::after {
+  // Primary colors
+  --col-total-white: #{$col-total-white};
+  --col-total-white-rgb: #{$col-total-white-rgb};
+  --col-total-black: #{$col-total-black};
+  --col-total-black-rgb: #{$col-total-black-rgb};
+
+  --col-white-alpha: rgba(#{$col-total-white-rgb}, 84%);
+
+  // Z-indexes
+  --z-app-navbar: 14;
+  --z-default: 1;
+  --z-hidden: -1;
+
+  // Text variables
+  /* stylelint-disable max-line-length */
+  --primary-font-family: 'Inter', -apple-system, 'BlinkMacSystemFont',
+    'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue',
+    sans-serif;
+  --secondary-font-family: 'Oswald', -apple-system, 'BlinkMacSystemFont',
+    'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue',
+    sans-serif;
+  /* stylelint-enable max-line-length */
+
+  --p-size: #{to-rem(14)};
+  --h1-size: #{to-rem(56)};
+  --h2-size: #{to-rem(32)};
+  --h3-size: #{to-rem(24)};
+  --h4-size: #{to-rem(32)};
+  --h5-size: #{to-rem(16)};
+  --h6-size: #{to-rem(16)};
+
+  @include respond-above(medium) {
+    --p-size: var(--p-size-medium);
+    --h1-size: var(--h1-size-medium);
+    --h2-size: var(--h2-size-medium);
+    --h3-size: var(--h3-size-medium);
+    --h4-size: var(--h4-size-medium);
+  }
+
+  @include respond-above(xlarge) {
+    --p-size: #{to-rem(14)};
+    --h1-size: #{to-rem(148)};
+    --h2-size: #{to-rem(48)};
+    --h3-size: #{to-rem(40)};
+    --h4-size: #{to-rem(32)};
+    --h5-size: #{to-rem(20)};
+    --h6-size: #{to-rem(18)};
+  }
+
+  // Transitions
+  --fast-transition-duration: 0.2s;
+  --medium-transition-duration: 0.3s;
+  --slow-transition-duration: 0.4s;
+  --hover-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --slide-transition-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
+  --fade-transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  --hover-transition: var(--fast-transition-duration)
+    var(--hover-transition-timing-function);
+  --slide-transition: var(--fast-transition-duration)
+    var(--slide-transition-timing-function);
+
+  // Base
+  --container-max-width: 100%;
+  --container-side-padding: #{to-rem(20)};
+  --primary-border-radius: #{to-rem(4)};
+
+  @include respond-above(medium) {
+    --container-max-width: #{to-rem(1100)};
+    --primary-bg-rect-size: #{to-rem(66)};
+  }
+
+  @include respond-above(xmedium) {
+    --container-max-width: #{to-rem(1180)};
+    --container-side-padding: #{to-rem(40)};
+  }
+
+  @include respond-above(large) {
+    --container-max-width: #{to-rem(1320)};
+  }
+
+  @include respond-above(xlarge) {
+    --container-max-width: #{to-rem(1520)};
+  }
+
+  // Common
+  --scrollbar-color: var(--primary-text-color);
+
+  // App navbar
+  --app-navbar-height: #{to-rem(80)};
+  --app-navbar-logo-color: var(--primary-title-color);
+}
