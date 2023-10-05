@@ -19,39 +19,19 @@
 
   // Text variables
   /* stylelint-disable max-line-length */
-  --primary-font-family: 'Inter', -apple-system, 'BlinkMacSystemFont',
+  --primary-font-family: 'Outfit', -apple-system, 'BlinkMacSystemFont',
     'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue',
     sans-serif;
-  --secondary-font-family: 'Oswald', -apple-system, 'BlinkMacSystemFont',
+  --secondary-font-family: 'Poppins', -apple-system, 'BlinkMacSystemFont',
     'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue',
     sans-serif;
+  --title-font-family: 'Oswald', -apple-system, 'BlinkMacSystemFont', 'Segoe UI',
+    'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
   /* stylelint-enable max-line-length */
 
-  --p-size: #{to-rem(14)};
-  --h1-size: #{to-rem(56)};
-  --h2-size: #{to-rem(32)};
-  --h3-size: #{to-rem(24)};
-  --h4-size: #{to-rem(32)};
-  --h5-size: #{to-rem(16)};
-  --h6-size: #{to-rem(16)};
-
-  @include respond-above(medium) {
-    --p-size: var(--p-size-medium);
-    --h1-size: var(--h1-size-medium);
-    --h2-size: var(--h2-size-medium);
-    --h3-size: var(--h3-size-medium);
-    --h4-size: var(--h4-size-medium);
-  }
-
-  @include respond-above(xlarge) {
-    --p-size: #{to-rem(14)};
-    --h1-size: #{to-rem(148)};
-    --h2-size: #{to-rem(48)};
-    --h3-size: #{to-rem(40)};
-    --h4-size: #{to-rem(32)};
-    --h5-size: #{to-rem(20)};
-    --h6-size: #{to-rem(18)};
-  }
+  --p-size: #{to-rem(18)};
+  --h2-size: #{to-rem(90)};
+  --h3-size: #{to-rem(50)};
 
   // Transitions
   --fast-transition-duration: 0.2s;
@@ -94,4 +74,9 @@
   // App navbar
   --app-navbar-height: #{to-rem(80)};
   --app-navbar-logo-color: var(--primary-title-color);
+
+  // Home page 
+  --home-page-movies-list-border-color: rgba(#{$col-total-white-rgb}, 14%);
+  --home-page-movies-list-bg: rgba(#{$col-eventide-rgb}, 34%);
+  --home-page-active-movie-border-color: rgba(#{$col-infra-red-rgb}, 50%);
 }

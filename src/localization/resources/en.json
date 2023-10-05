@@ -1,1 +1,25 @@
-{}
+{
+  "app": {
+    "title": "Apna TV"
+  },
+  "home-page": {
+    "popular-movies-title": "Popular movies"
+  },
+  "movies-data": {
+    "captain-america-title": "Captain America",
+    "captain-america-subtitle": "The First Avenger",
+    "captain-america-desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi voluptatibus eaque aut, fugiat eveniet laudantium! Hic, soluta excepturi, asperiores architecto consequuntur est praesentium, voluptates dignissimos rem recusandae accusantium.",
+    "star-wars-title": "Star Wars",
+    "star-wars-skywalker-subtitle": "The Rise of Skywalker",
+    "star-wars-skywalker-desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores quam nesciunt, totam iste laborum, optio dolor soluta molestias voluptas pariatur accusamus architecto saepe enim tenetur quis eius culpa id velit. Nihil rerum reprehenderit fugiat esse aliquid eaque dolores alias quo!",
+    "spider-man-title": "Spider-Man",
+    "spider-man-desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum ut vero consectetur dignissimos iusto ratione officiis earum delectus harum. Nobis.",
+    "star-wars-jedi-subtitle": "The Last Jedi",
+    "star-wars-jedi-desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, veniam! Quidem error, minima unde excepturi, cum, minus aliquam dolor dolorem in voluptas praesentium ex voluptatem.",
+    "avengers-title": "Avengers",
+    "avengers-subtitle": "Endgame",
+    "avengers-desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt rem perspiciatis corporis natus doloremque nemo ab quae sequi eius itaque! Earum ratione ipsum harum aspernatur officiis quasi perspiciatis facilis sunt.",
+    "uncharted-title": "Uncharted",
+    "uncharted-desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, mollitia quisquam vitae, reiciendis temporibus cupiditate doloribus facilis suscipit repellendus repellat accusantium hic. Optio doloribus nostrum nemo iusto ipsum."
+  }
+}

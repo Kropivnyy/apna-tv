@@ -18,7 +18,7 @@ const app = createApp({
       app.appContext.config.globalProperties.$locale = locale
     }
   },
-  render: () => h(App)
+  render: () => h(App),
 })
 
 const initApp = async () => {
