@@ -2,6 +2,14 @@
   "app": {
     "title": "Apna TV"
   },
+  "app-navbar": {
+    "sign-up-link": "Sign Up"
+  },
+  "navigation": {
+    "movies": "Movies",
+    "tv-shows": "TV Shows",
+    "documentaries": "Documentaries"
+  },
   "home-page": {
     "popular-movies-title": "Popular movies"
   },

@@ -2,7 +2,7 @@
   <section
     class="home-page"
     :style="{
-      backgroundImage: `url(${activeMovie.poster})`,
+      backgroundImage: `var(--home-page-bg-gradient), url(${activeMovie.poster})`,
     }"
   >
     <div class="home-page__container container">
@@ -60,6 +60,7 @@ const onClickMovie = movieId => {
 }
 
 .home-page__container {
+  padding-top: to-rem(140);
   padding-bottom: min(to-rem(66), 6.5svh);
 }
 

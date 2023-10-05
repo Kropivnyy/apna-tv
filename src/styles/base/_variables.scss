@@ -10,7 +10,8 @@
   --col-total-black: #{$col-total-black};
   --col-total-black-rgb: #{$col-total-black-rgb};
 
-  --col-white-alpha: rgba(#{$col-total-white-rgb}, 84%);
+  --col-primary-accent: #{$col-infra-red};
+  --col-primary-accent-rgb: #{$col-infra-red-rgb};
 
   // Z-indexes
   --z-app-navbar: 14;
@@ -48,7 +49,7 @@
   // Base
   --container-max-width: 100%;
   --container-side-padding: #{to-rem(20)};
-  --primary-border-radius: #{to-rem(4)};
+  --primary-text-color: var(--col-total-white);
 
   @include respond-above(medium) {
     --container-max-width: #{to-rem(1100)};
@@ -72,10 +73,14 @@
   --scrollbar-color: var(--primary-text-color);
 
   // App navbar
-  --app-navbar-height: #{to-rem(80)};
-  --app-navbar-logo-color: var(--primary-title-color);
+  --app-navbar-height: #{clamp(to-rem(90), 13svh, to-rem(133))};
 
-  // Home page 
+  // Home page
+  --home-page-bg-gradient: linear-gradient(
+    91deg,
+    rgba(#{$col-total-black-rgb}, 25%) 25%,
+    rgba(#{$col-total-black-rgb}, 0%) 82.23%
+  );
   --home-page-movies-list-border-color: rgba(#{$col-total-white-rgb}, 14%);
   --home-page-movies-list-bg: rgba(#{$col-eventide-rgb}, 34%);
   --home-page-active-movie-border-color: rgba(#{$col-infra-red-rgb}, 50%);

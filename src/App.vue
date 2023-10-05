@@ -1,8 +1,8 @@
 <template>
   <AppNavbar />
 
-  <h1 class="visually-hidden">{{ $t('app.title') }}</h1>
   <main class="application">
+    <h1 class="visually-hidden">{{ $t('app.title') }}</h1>
     <HomePage />
   </main>
 </template>

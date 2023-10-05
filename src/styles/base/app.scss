@@ -30,6 +30,7 @@ button,
 p {
   font-size: var(--p-size, #{to-rem(16)});
   line-height: 1.5;
+  font-weight: 500;
 }
 
 button {
@@ -79,7 +80,6 @@ select {
 
 p {
   margin: 0;
-  font-weight: 400;
   word-wrap: break-word;
 }
 
@@ -89,6 +89,7 @@ h3,
 h4,
 h5,
 h6 {
+  margin-left: -0.03em;
   font-family: var(--title-font-family);
   color: var(--primary-title-color);
   line-height: 1.5;
@@ -113,6 +114,10 @@ img {
   max-width: 100%;
   height: auto;
   vertical-align: middle;
+}
+
+a {
+  display: inline-block;
 }
 
 ::placeholder {
