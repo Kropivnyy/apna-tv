@@ -37,8 +37,8 @@
   /* stylelint-enable max-line-length */
 
   --p-size: #{to-rem(18)};
-  --h2-size: #{to-rem(90)};
-  --h3-size: #{to-rem(50)};
+  --h2-size: #{clamp(to-rem(64), 8.2svh, to-rem(90))};
+  --h3-size: #{clamp(to-rem(36), 4.6svh, to-rem(50))};
 
   // Transitions
   --fast-transition-duration: 0.2s;

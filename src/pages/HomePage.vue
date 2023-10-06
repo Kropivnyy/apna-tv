@@ -59,24 +59,24 @@ const onClickMovie = movieId => {
 
 <style lang="scss" scoped>
 .home-page {
-  min-height: 100svh;
+  height: 100svh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .home-page__container {
-  padding-top: to-rem(140);
-  padding-bottom: min(to-rem(66), 6.5svh);
+  padding-top: var(--app-navbar-height);
+  padding-bottom: to-rem(20);
 }
 
 .home-page__movie-details {
-  margin-bottom: to-rem(45);
+  margin-bottom: 4svh;
   padding-left: to-rem(32);
 }
 
 .home-page__category-title {
-  margin-bottom: to-rem(33);
+  margin-bottom: 3svh;
   font-family: var(--secondary-font-family);
   font-size: to-rem(20);
   font-weight: 700;

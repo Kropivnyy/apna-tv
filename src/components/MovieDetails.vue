@@ -55,18 +55,19 @@ defineProps({
 }
 
 .movie-details__subtitle {
-  margin-bottom: to-rem(6);
+  margin-bottom: 0.5svh;
   text-transform: uppercase;
 }
 
 .movie-details__description {
   max-width: to-rem(520);
-  margin-bottom: to-rem(23);
+  margin-bottom: 2svh;
   opacity: 0.9;
+  font-size: clamp(to-rem(14), 1.7svh, var(--p-size));
 }
 
 .movie-details__rating {
-  margin-bottom: to-rem(36);
+  margin-bottom: 3.1svh;
 }
 
 .movie-details__cta-list {
