@@ -92,7 +92,7 @@ const buttonType = computed(() => attrs.type || 'button')
   color: var(--primary-text-color);
   background-color: transparent;
   border-radius: to-rem(41);
-  font-size: to-rem(18);
+  font-size: var(--p-size);
   font-weight: 600;
   letter-spacing: to-rem(0.72);
   user-select: none;
@@ -137,14 +137,19 @@ const buttonType = computed(() => attrs.type || 'button')
 }
 
 .app-button--medium {
-  min-height: to-rem(48);
-  min-width: to-rem(120);
+  min-height: to-rem(42);
+  min-width: to-rem(100);
   padding: 0 to-rem(16);
+
+  @include respond-above(medium) {
+    min-height: to-rem(48);
+    min-width: to-rem(120);
+  }
 }
 
 .app-button--large {
-  min-height: to-rem(56);
-  min-width: to-rem(190);
+  min-height: to-rem(48);
+  min-width: to-rem(160);
   padding: 0 to-rem(22);
 }
 

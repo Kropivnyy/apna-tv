@@ -50,7 +50,7 @@ defineProps({
 
 <style lang="scss" scoped>
 .movie-details__title {
-  margin-bottom: -#{to-rem(16)};
+  margin-bottom: -0.25em;
   text-transform: uppercase;
 }
 
