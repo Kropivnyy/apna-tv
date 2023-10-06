@@ -7,7 +7,6 @@ import { useI18n } from 'vue-i18n'
 
 import App from '@/App.vue'
 import { i18n } from '@/localization'
-import { ICON_NAMES } from '@/const'
 
 const app = createApp({
   setup() {
@@ -24,8 +23,6 @@ const app = createApp({
 const initApp = async () => {
   try {
     app.use(i18n)
-
-    app.config.globalProperties.$icons = ICON_NAMES
 
     app.config.errorHandler = function (error, instance, info) {
       log.error(error)

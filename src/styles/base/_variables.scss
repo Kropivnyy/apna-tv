@@ -10,8 +10,14 @@
   --col-total-black: #{$col-total-black};
   --col-total-black-rgb: #{$col-total-black-rgb};
 
-  --col-primary-accent: #{$col-infra-red};
-  --col-primary-accent-rgb: #{$col-infra-red-rgb};
+        --col-white-min-alpha: rgba(#{$col-total-white-rgb}, 15%);
+
+  --col-primary-accent-main: #{$col-infra-red};
+  --col-primary-accent-main-rgb: #{$col-infra-red-rgb};
+  --col-primary-accent-main-dark: #{color.adjust(
+      $col-infra-red,
+      $lightness: -10%
+    )};
 
   // Z-indexes
   --z-app-navbar: 14;
@@ -84,4 +90,7 @@
   --home-page-movies-list-border-color: rgba(#{$col-total-white-rgb}, 14%);
   --home-page-movies-list-bg: rgba(#{$col-eventide-rgb}, 34%);
   --home-page-active-movie-border-color: rgba(#{$col-infra-red-rgb}, 50%);
+
+  // Rating icon
+  --rating-icon-color: #{$col-forsythia};
 }

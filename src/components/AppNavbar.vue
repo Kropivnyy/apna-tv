@@ -14,22 +14,16 @@
       </nav>
 
       <a class="app-navbar__logo" href="#">
-        <SvgIcon class="app-navbar__logo-icon" :name="ICON_NAMES.logo" />
+        <LogoIcon />
       </a>
 
       <div class="app-navbar__toolbar">
         <ul class="app-navbar__toolbar-icons-list">
           <li class="app-navbar__toolbar-icons-item">
-            <SvgIcon
-              class="app-navbar__toolbar-icon"
-              :name="ICON_NAMES.search"
-            />
+            <SearchIcon />
           </li>
           <li class="app-navbar__toolbar-icons-item">
-            <SvgIcon
-              class="app-navbar__toolbar-icon app-navbar__toolbar-icon--bell"
-              :name="ICON_NAMES.bell"
-            />
+            <BellIcon />
           </li>
         </ul>
         <a class="app-navbar__sign-up-link" href="#">{{
@@ -41,9 +35,10 @@
 </template>
 
 <script setup>
-import SvgIcon from '@/components/SvgIcon.vue'
+import LogoIcon from '@/components/icons/LogoIcon.vue'
+import SearchIcon from '@/components/icons/SearchIcon.vue'
+import BellIcon from '@/components/icons/BellIcon.vue'
 import { NAVIGATION } from '@/data'
-import { ICON_NAMES } from '@/const'
 </script>
 
 <style lang="scss" scoped>
@@ -80,7 +75,7 @@ import { ICON_NAMES } from '@/const'
   }
 
   @include hover {
-    color: var(--col-primary-accent);
+    color: var(--col-primary-accent-main);
   }
 }
 
@@ -93,28 +88,14 @@ import { ICON_NAMES } from '@/const'
   width: to-rem(136);
 }
 
-.app-navbar__logo-icon {
-  height: 100%;
-  width: 100%;
-}
-
 .app-navbar__toolbar-icons-item {
+  display: flex;
   margin-right: to-rem(32);
   cursor: pointer;
   transition: color var(--hover-transition);
 
   @include hover {
-    color: var(--col-primary-accent);
-  }
-}
-
-.app-navbar__toolbar-icon {
-  height: to-rem(24);
-  width: to-rem(24);
-
-  &--bell {
-    height: to-rem(21);
-    width: to-rem(21);
+    color: var(--col-primary-accent-main);
   }
 }
 
@@ -122,7 +103,7 @@ import { ICON_NAMES } from '@/const'
   transition: color var(--hover-transition);
 
   @include hover {
-    color: var(--col-primary-accent);
+    color: var(--col-primary-accent-main);
   }
 }
 </style>

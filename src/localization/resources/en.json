@@ -13,6 +13,10 @@
   "home-page": {
     "popular-movies-title": "Popular movies"
   },
+  "movie-details": {
+    "watch-btn": "Watch Now",
+    "trailer-btn": "Trailer"
+  },
   "movies-data": {
     "captain-america-title": "Captain America",
     "captain-america-subtitle": "The First Avenger",

@@ -6,7 +6,13 @@
     }"
   >
     <div class="home-page__container container">
-      <MovieDetails class="home-page__movie-details" :movie="activeMovie" />
+      <Transition name="fade" mode="out-in" appear>
+        <MovieDetails
+          class="home-page__movie-details"
+          :key="movieActiveId"
+          :movie="activeMovie"
+        />
+      </Transition>
       <div class="home-page__category-title">
         {{ $t('home-page.popular-movies-title') }}
       </div>
@@ -82,9 +88,10 @@ const onClickMovie = movieId => {
   --movies-list-shift: #{to-rem(11)};
 
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
   gap: to-rem(24);
+  height: 28svh;
   width: calc(100% + var(--movies-list-shift) * 2);
   margin: 0 calc(var(--movies-list-shift) * -1);
   padding: to-rem(12) to-rem(16);
@@ -95,6 +102,7 @@ const onClickMovie = movieId => {
 }
 
 .home-page__movie-item {
+  display: flex;
   border-radius: to-rem(16);
   border: to-rem(4) solid transparent;
   overflow: hidden;
@@ -106,15 +114,20 @@ const onClickMovie = movieId => {
   @include hover {
     transform: scale(1.1);
   }
+
+  &--active {
+    transform: scale(1.35);
+    border-color: var(--home-page-active-movie-border-color);
+    border-radius: to-rem(24);
+
+    @include hover {
+      transform: scale(1.35);
+    }
+  }
 }
 
-.home-page__movie-item--active {
-  transform: scale(1.35);
-  border-color: var(--home-page-active-movie-border-color);
-  border-radius: to-rem(24);
-
-  @include hover {
-    transform: scale(1.35);
-  }
+.home-page__movie-poster {
+  height: 100%;
+  object-fit: cover;
 }
 </style>
