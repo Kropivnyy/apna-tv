@@ -2,14 +2,13 @@
   "name": "apna",
   "version": "0.0.0",
   "private": true,
-  "homepage": "https://github.com/Kropivnyy/apna-tv",
+  "author": "Oleksandr Kropivnyi <kropivnyy@gmail.com>",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-    "format": "prettier --write src/",
-    "deploy": "gh-pages -d dist"
+    "format": "prettier --write src/"
   },
   "dependencies": {
     "swiper": "^10.3.1",
@@ -22,7 +21,6 @@
     "@vue/eslint-config-prettier": "^8.0.0",
     "eslint": "^8.49.0",
     "eslint-plugin-vue": "^9.17.0",
-    "gh-pages": "^6.0.0",
     "loglevel": "^1.8.1",
     "prettier": "^3.0.3",
     "sass": "^1.68.0",
