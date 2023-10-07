@@ -1,6 +1,10 @@
 <template>
   <header class="app-navbar">
     <div class="app-navbar__container container">
+      <a class="app-navbar__logo-link" href="#">
+        <LogoIcon class="app-navbar__logo" />
+      </a>
+
       <nav class="app-navbar__navigation">
         <ul class="app-navbar__nav-list">
           <li
@@ -13,17 +17,13 @@
         </ul>
       </nav>
 
-      <a class="app-navbar__logo" href="#">
-        <LogoIcon />
-      </a>
-
       <div class="app-navbar__toolbar">
         <ul class="app-navbar__toolbar-icons-list">
           <li class="app-navbar__toolbar-icons-item">
-            <SearchIcon />
+            <SearchIcon class="app-navbar__toolbar-icon" />
           </li>
           <li class="app-navbar__toolbar-icons-item">
-            <BellIcon />
+            <BellIcon class="app-navbar__toolbar-icon" />
           </li>
         </ul>
         <a class="app-navbar__sign-up-link" href="#">{{
@@ -56,8 +56,24 @@ import { NAVIGATION } from '@/data'
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: to-rem(20);
+  font-size: to-rem(16);
   letter-spacing: to-rem(0.6);
+
+  @include respond-above(tablet) {
+    font-size: to-rem(18);
+  }
+
+  @include respond-above(xmedium) {
+    font-size: to-rem(20);
+  }
+}
+
+.app-navbar__navigation {
+  display: none;
+
+  @include respond-above(tablet) {
+    display: block;
+  }
 }
 
 .app-navbar__nav-list,
@@ -71,7 +87,11 @@ import { NAVIGATION } from '@/data'
   transition: color var(--hover-transition);
 
   &:not(:last-child) {
-    margin-right: to-rem(40);
+    margin-right: to-rem(32);
+
+    @include respond-above(xmedium) {
+      margin-right: to-rem(40);
+    }
   }
 
   @include hover {
@@ -79,23 +99,48 @@ import { NAVIGATION } from '@/data'
   }
 }
 
+.app-navbar__logo-link {
+  flex-shrink: 0;
+
+  @include respond-above(medium) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
 .app-navbar__logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: to-rem(30);
-  width: to-rem(136);
+  display: flex;
+  height: to-rem(24);
+
+  @include respond-above(small) {
+    height: to-rem(30);
+  }
 }
 
 .app-navbar__toolbar-icons-item {
   display: flex;
-  margin-right: to-rem(32);
+  margin-right: to-rem(24);
   cursor: pointer;
   transition: color var(--hover-transition);
 
   @include hover {
     color: var(--col-primary-accent-main);
+  }
+
+  @include respond-above(small) {
+    margin-right: to-rem(32);
+  }
+}
+
+.app-navbar__toolbar-icon {
+  height: to-rem(18);
+  width: to-rem(18);
+
+  @include respond-above(small) {
+    height: unset;
+    width: unset;
   }
 }
 

@@ -45,7 +45,7 @@
 </template>
 
 <script setup>
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { MOVIES_DATA } from '@/data'
 
 import MovieDetails from '@/components/MovieDetails.vue'
@@ -63,6 +63,7 @@ const onClickMovie = movieId => {
 
 const autoHeightTransition = () => {
   const { value: targetElement } = movieDetailsRef
+  console.log('first')
 
   if (!targetElement) return
 
@@ -97,6 +98,12 @@ const onBeforeEnter = () => {
 onMounted(() => {
   // save current height
   movieDetailsPrevHeight.value = movieDetailsRef.value.scrollHeight + 'px'
+
+  window.addEventListener('resize', autoHeightTransition)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', autoHeightTransition)
 })
 </script>
 
@@ -121,7 +128,7 @@ onMounted(() => {
 .home-page__movie-details {
   margin-bottom: 4svh;
 
-  @include respond-above(medium) {
+  @include respond-above(tablet) {
     padding-left: to-rem(32);
   }
 }
@@ -157,6 +164,7 @@ onMounted(() => {
 }
 
 .home-page__movie-item {
+  aspect-ratio: 0.72;
   display: flex;
   border-radius: to-rem(16);
   border: to-rem(4) solid transparent;
