@@ -42,7 +42,11 @@
             'home-page__movie-item--active': movie.id === movieActiveId,
           }"
         >
-          <button type="button" @click="onClickMovie(movie.id)">
+          <button
+            class="home-page__movie-item-btn"
+            type="button"
+            @click="onClickMovie(movie.id)"
+          >
             <img
               class="home-page__movie-poster"
               :src="movie.preview"
@@ -205,27 +209,36 @@ onUnmounted(() => {
     transform: scale(1.1);
   }
 
+  @include respond-above(medium) {
+    width: 100%;
+  }
+
   &--active {
     transform: scale(1.2);
     border-color: var(--home-page-active-movie-border-color);
     border-radius: to-rem(24);
 
     @include respond-above(medium) {
-      transform: scale(1.35);
+      transform: scale(1.3);
     }
 
     @include hover {
       transform: scale(1.2);
 
       @include respond-above(medium) {
-        transform: scale(1.35);
+        transform: scale(1.3);
       }
     }
   }
 }
 
+.home-page__movie-item-btn {
+  width: 100%;
+}
+
 .home-page__movie-poster {
   height: 100%;
+  width: 100%;
   object-fit: cover;
 }
 </style>
@@ -233,6 +246,9 @@ onUnmounted(() => {
 <style lang="scss">
 .home-page .swiper-wrapper {
   @include respond-above(medium) {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: to-rem(30);
     justify-content: space-between;
   }
 }
