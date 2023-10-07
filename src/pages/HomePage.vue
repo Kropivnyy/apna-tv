@@ -19,10 +19,24 @@
       <div class="home-page__category-title">
         {{ $t('home-page.popular-movies-title') }}
       </div>
-      <ul class="home-page__movies-list">
-        <li
+      <swiper
+        class="home-page__movies-list"
+        slides-per-view="auto"
+        space-between="32"
+        :free-mode="true"
+        :breakpoints="{
+          '1024': {
+            enabled: false,
+            spaceBetween: 0,
+          },
+        }"
+        :modules="swiperModules"
+        tag="ul"
+      >
+        <swiper-slide
           v-for="movie in MOVIES_DATA"
           :key="movie.id"
+          tag="li"
           class="home-page__movie-item"
           :class="{
             'home-page__movie-item--active': movie.id === movieActiveId,
@@ -38,17 +52,25 @@
               loading="lazy"
             />
           </button>
-        </li>
-      </ul>
+        </swiper-slide>
+      </swiper>
     </div>
   </section>
 </template>
 
 <script setup>
+import 'swiper/css'
+import 'swiper/css/free-mode'
+
 import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { FreeMode } from 'swiper/modules'
+
 import { MOVIES_DATA } from '@/data'
 
 import MovieDetails from '@/components/MovieDetails.vue'
+
+const swiperModules = [FreeMode]
 
 const movieActiveId = ref(2)
 const movieDetailsPrevHeight = ref(0)
@@ -147,24 +169,29 @@ onUnmounted(() => {
 }
 
 .home-page__movies-list {
-  --movies-list-shift: #{to-rem(11)};
+  --movies-list-shift: #{to-rem(50)};
 
-  display: flex;
-  align-items: stretch;
-  justify-content: space-between;
-  gap: to-rem(24);
-  height: 28svh;
   width: calc(100% + var(--movies-list-shift) * 2);
   margin: 0 calc(var(--movies-list-shift) * -1);
-  padding: to-rem(12) to-rem(16);
+  padding: to-rem(12) var(--movies-list-shift);
   background-color: var(--home-page-movies-list-bg);
   border: to-rem(1) solid var(--home-page-movies-list-border-color);
   border-radius: to-rem(24);
   backdrop-filter: blur(to-rem(10));
+  overflow: visible;
+  user-select: none;
+
+  @include respond-above(medium) {
+    --movies-list-shift: #{to-rem(11)};
+
+    padding: to-rem(12) to-rem(16);
+  }
 }
 
 .home-page__movie-item {
   aspect-ratio: 0.72;
+  height: 26svh;
+  width: unset;
   display: flex;
   border-radius: to-rem(16);
   border: to-rem(4) solid transparent;
@@ -179,12 +206,20 @@ onUnmounted(() => {
   }
 
   &--active {
-    transform: scale(1.35);
+    transform: scale(1.2);
     border-color: var(--home-page-active-movie-border-color);
     border-radius: to-rem(24);
 
-    @include hover {
+    @include respond-above(medium) {
       transform: scale(1.35);
+    }
+
+    @include hover {
+      transform: scale(1.2);
+
+      @include respond-above(medium) {
+        transform: scale(1.35);
+      }
     }
   }
 }
@@ -192,5 +227,13 @@ onUnmounted(() => {
 .home-page__movie-poster {
   height: 100%;
   object-fit: cover;
+}
+</style>
+
+<style lang="scss">
+.home-page .swiper-wrapper {
+  @include respond-above(medium) {
+    justify-content: space-between;
+  }
 }
 </style>
