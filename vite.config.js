@@ -14,17 +14,18 @@ import * as path from 'path'
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
 
-  // const isProduction = env.VITE_ENVIRONMENT === 'production'
+  const isProduction = env.VITE_ENVIRONMENT === 'production'
   // const isDevelopment = env.VITE_ENVIRONMENT === 'development'
   // const isAnalyze = env.VITE_ENVIRONMENT === 'analyze'
   // const buildVersion = env.VITE_BUILD_VERSION
 
   return {
+    base: isProduction ? '/apna-tv/' : '/',
     ...(env.VITE_PORT
       ? {
           server: {
-            port: Number(env.VITE_PORT)
-          }
+            port: Number(env.VITE_PORT),
+          },
         }
       : {}),
     publicDir: 'static',
@@ -33,8 +34,8 @@ export default defineConfig(({ mode }) => {
 
       createSvgIconsPlugin({
         iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
-        symbolId: '[name]'
-      })
+        symbolId: '[name]',
+      }),
     ],
     css: {
       preprocessorOptions: {
@@ -44,15 +45,15 @@ export default defineConfig(({ mode }) => {
           @import "src/styles/base/_mixins.scss";
           @import "src/styles/base/_placeholders.scss";
           @import "src/styles/base/_media.scss";
-        `
-        }
+        `,
+        },
       },
-      devSourcemap: true
+      devSourcemap: true,
     },
     resolve: {
       alias: {
-        '@': fileURLToPath(new URL('./src', import.meta.url))
-      }
-    }
+        '@': fileURLToPath(new URL('./src', import.meta.url)),
+      },
+    },
   }
 })
